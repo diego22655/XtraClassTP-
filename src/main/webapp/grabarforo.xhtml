@@ -20,23 +20,26 @@
 			<h:outputLabel for="idPersona" value="Id " styleClass="control-label" />
 
 			<p:inputText autocomplete="off" id="idForo"
-				styleClass="form-control" value="#{ForoController.foro.idForo}"
+				styleClass="form-control" value="#{foroController.foro.idForo}"
 				required="true" />
 				
-			<h:outputLabel for="IdAlumno" value="IdAlumno"
+			<h:outputLabel for="alumno" value="Alumno"
 				styleClass="control-label" />
-
-			<p:inputText autocomplete="off" id="IdAlumno"
-				styleClass="form-control"
-				value="#{personaController.persona.nombre}" maxlength="20"
-				required="true" />
+			<br />
+			<p:selectOneMenu id="cboPersona" value="#{foroController.foro.alumno}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{personaController.listaPersonas}" var = "a" 
+					itemLabel="#{a.nombre}" itemValue="#{a}"/>
+			</p:selectOneMenu>
+			
+			<br />
 
 			<h:outputLabel for="Asunto" value="Asunto"
 				styleClass="control-label" />
 				
 			<p:inputText autocomplete="off" id="Asunto"
 				styleClass="form-control"
-				value="#{personaController.persona.apellido}" maxlength="20"
+				value="#{foroController.foro.asunto}" maxlength="20"
 				required="true" />
 
 			<h:outputLabel for="Comentario" value="Comentario"
@@ -44,7 +47,7 @@
 				
 			<p:inputText autocomplete="off" id="Comentario"
 				styleClass="form-control"
-				value="#{personaController.persona.email}" maxlength="50"
+				value="#{foroController.foro.comentario}" maxlength="50"
 				required="true" />
 				
 			
@@ -54,9 +57,9 @@
 
 
 			<p:commandButton value="Grabar"
-				actionListener="#{personaController.insert()}"
+				actionListener="#{foroController.insert()}"
 				styleClass="btn btn-primary " update="@form"
-				action="alumno?faces-redirect=true" />
+				action="pruebaForo?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
 				action="listColaborador?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />

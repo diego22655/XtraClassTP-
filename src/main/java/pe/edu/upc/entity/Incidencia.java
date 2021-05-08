@@ -22,13 +22,13 @@ public class Incidencia {
 	@Column(name = "incidencia_id")
 	private int id;
 	
-	@Column(name = "descripcion", length = 120, nullable = false)
+	@Column(name = "descripcion", length = 120)
 	private String descripcion;
 	
-	@Column(name = "problema", length = 120, nullable = false)
+	@Column(name = "problema", length = 120)
 	private String problema;
 	
-	@Column(name = "fecha", nullable = false)
+	@Column(name = "fecha")
 	@Temporal(TemporalType.DATE)
 	private Date fecha;
 	

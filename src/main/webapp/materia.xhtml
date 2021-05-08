@@ -8,34 +8,34 @@
 <ui:composition template="master.xhtml">
 
 	<ui:define name="title">
-        .:Registro de Asunto:.
+        .:Registro de Materia:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Asunto</span>
+		<span>Materia</span>
 	</ui:define>
 
 	<ui:define name="content">
 		<h:form>
 		
-			<h:outputLabel for="idAsunto" value="Id " styleClass="control-label" />
-			<p:inputText autocomplete="off" id="idAsunto"
-				styleClass="form-control" value="#{asuntoController.asunto.idAsunto}"
+			<h:outputLabel for="idMateria" value="Id " styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idMateria"
+				styleClass="form-control" value="#{materiaController.materia.idMateria}"
 				required="true" />
 				
-			<h:outputLabel for="nomAsunto" value="Asunto "
+			<h:outputLabel for="nomMateria" value="Materia "
 				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="nomAsunto"
+			<p:inputText autocomplete="off" id="nomMateria"
 				styleClass="form-control"
-				value="#{asuntoController.asunto.nomAsunto}" maxlength="30"
+				value="#{materiaController.materia.nombre}" maxlength="20"
 				required="true" />
 
 			<p:commandButton value="Grabar"
-				actionListener="#{asuntoController.insert()}"
+				actionListener="#{materiaController.insert()}"
 				styleClass="btn btn-primary " update="@form"
 				action="panel?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
-				action="listPropietario?faces-redirect=true" immediate="true"
+				action="panel?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />
 
 			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />

@@ -1,4 +1,5 @@
 package pe.edu.upc.daoimpl;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +11,6 @@ import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.IForoDao;
 import pe.edu.upc.entity.Foro;
-
-
-
 
 public class ForoDaolmpl implements IForoDao, Serializable{
 	

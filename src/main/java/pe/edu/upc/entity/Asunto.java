@@ -19,7 +19,7 @@ public class Asunto implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idAsunto;
 	
-	@Column(name = "nomAsunto",length = 15, nullable = false)
+	@Column(name = "nomAsunto",length = 30, nullable = false)
 	private String nomAsunto;
 	
 	@Column(name = "descripcion",length = 120)

@@ -19,10 +19,10 @@ import javax.persistence.Table;
 public class MateriaProfesor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Docente_ID",nullable = false)
+	@Column(name = "Docente_ID")
 	private Integer DocenteID;
 	
-	@Column(name = "materia_ID",nullable = false)
+	@Column(name = "materia_ID")
 	private Integer materiaID;
 	
 	@OneToMany(mappedBy = "materiaProfesor", fetch = FetchType.LAZY)

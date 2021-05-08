@@ -52,7 +52,7 @@ public class IncidenciaController implements Serializable {
 
 	public String newIncidencia() {
 		this.setIncidencia(new Incidencia());
-		return "Incidencia.xhtml";
+		return "grabarIncidencia.xhtml";
 	}
 
 	public void insert() {

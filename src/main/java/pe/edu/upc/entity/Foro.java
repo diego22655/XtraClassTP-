@@ -15,9 +15,9 @@ import javax.persistence.Table;
 @Table(name = "foros")
 public class Foro implements Serializable{ 
 	private static final long serialVersionUID = 1L;
+	
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 @Column(name="Foro_ID", columnDefinition="NUMERIC(6)")
 	 private int idForo;
 
 	 @Column(name="Asunto", length = 25)
@@ -27,22 +27,21 @@ public class Foro implements Serializable{
 	 private String comentario;
 	 
 	 @ManyToOne
-	 @JoinColumn(name = "Alumno_ID", nullable = false)
+	 @JoinColumn(name = "Alumno_ID")
 	 private Alumno alumno;
-	 
-	 public Foro() {
-			super();
-			// TODO Auto-generated constructor stub
-		}
-	 
-	 public Foro(int idForo, String asunto, String comentario,Alumno alumno ) {
-			super();
-			this.idForo = idForo;
-			this.asunto = asunto;
-			this.comentario = comentario;
-			this.alumno = alumno;
-			
-		}
+
+	public Foro() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Foro(int idForo, String asunto, String comentario, Alumno alumno) {
+		super();
+		this.idForo = idForo;
+		this.asunto = asunto;
+		this.comentario = comentario;
+		this.alumno = alumno;
+	}
 
 	public int getIdForo() {
 		return idForo;
@@ -75,6 +74,8 @@ public class Foro implements Serializable{
 	public void setAlumno(Alumno alumno) {
 		this.alumno = alumno;
 	}
+	 
+	
 	 
 	 // -- Constructor, Getter, Setter
 	 

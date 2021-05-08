@@ -8,25 +8,20 @@
 <ui:composition template="master.xhtml">
 
 	<ui:define name="title">
-        .:Registro de Docente:.
+        .:Registro de Materias:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Registro de Numero de cuenta</span>
+		<span>Registro de Materias</span>
 	</ui:define>
 
 	<ui:define name="content">
 		<h:form>
-		
-			<h:outputLabel for="idDocente" value="Id " styleClass="control-label" />
-			<p:inputText autocomplete="off" id="idDocente"
-				styleClass="form-control" value="#{docenteController.docente.idDocente}"
-				required="true" />
+			<h:outputLabel for="idDocente" value="Docente" styleClass="control-label" />
 				
-			<h:outputLabel for="docente" value="Docente"
-				styleClass="control-label" />
 			<br />
-			<p:selectOneMenu id="cboPersona" value="#{docenteController.docente.persona}"
+			
+			<p:selectOneMenu id="cboDocente" value="#{materiaProfesorController.materiaprofesor.docenteID}"
 				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems value="#{docenteController.listaPersonas}" var = "a" 
 					itemLabel="#{a.nombre}" itemValue="#{a}"/>
@@ -34,20 +29,23 @@
 			
 			<br />
 			
-			<h:outputLabel for="tarjeta" value="Tarjeta"
-				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="tarjeta"
-				styleClass="form-control"
-				value="#{docenteController.docente.numeroCuenta}" maxlength="16"
-				required="true" />
-					
+			<h:outputLabel for="idMateria" value="Materia" styleClass="control-label" />
+				
+			<br />
+			
+			<p:selectOneMenu id="cboMateria" value="#{materiaProfesorController.materiaprofesor.materiaID}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{materiaController.listaMaterias}" var = "a" 
+					itemLabel="#{a.nombre}" itemValue="#{a}"/>
+			</p:selectOneMenu> 
 			
 			<br />
 
+
 			<p:commandButton value="Grabar"
-				actionListener="#{docenteController.insert()}"
+				actionListener="#{materiaProfesorController.insert()}"
 				styleClass="btn btn-primary " update="@form"
-				action="materiaProfesor?faces-redirect=true" />
+				action="panel?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
 				action="panel?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />

@@ -22,19 +22,19 @@ public class Persona {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPersona;
 	
-	@Column(name = "nombre", length = 20, nullable = false)
+	@Column(name = "nombre", length = 20, nullable = true)
 	private String nombre;
 	
-	@Column(name = "apellido", length = 20, nullable = false)
+	@Column(name = "apellido", length = 20)
 	private String apellido;
 	
-	@Column(name = "email", length = 50, nullable = false)
+	@Column(name = "email", length = 50)
 	private String email;
 	
-	@Column(name = "contraseña", length = 12, nullable = false)
+	@Column(name = "contraseña", length = 12, nullable = true)
 	private String contraseña;
 	 
-	@Column(name = "nacimiento", nullable = true)
+	@Column(name = "nacimiento")
 	@Temporal(TemporalType.DATE)
 	private Date nacimiento;
 	

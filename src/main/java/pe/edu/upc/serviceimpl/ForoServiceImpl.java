@@ -1,4 +1,5 @@
 package pe.edu.upc.serviceimpl;
+import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -13,19 +14,23 @@ import pe.edu.upc.service.IForoService;
 @Named
 @RequestScoped
 
-public class ForoServiceImpl implements IForoService {
+public class ForoServiceImpl implements IForoService, Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	@Inject
 	private IForoDao fD;
+	
 	@Override
 	public void insert(Foro f) {
 		fD.insert(f);
 	}
-	@Override
 	
-
+	@Override
 	public List<Foro> list() {
 		return fD.list();
 	}
+	
 	@Override
 	public void eliminar(int idForo) {
 		fD.eliminar(idForo);

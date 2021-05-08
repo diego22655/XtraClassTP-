@@ -9,10 +9,10 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import pe.edu.upc.dao.IIncidenciaDao;
-import pe.edu.upc.entity.Incidencia;
+import pe.edu.upc.dao.IMateriaProfesorDao;
+import pe.edu.upc.entity.MateriaProfesor;
 
-public class IncidenciaDaoImpl implements IIncidenciaDao, Serializable{
+public class MateriaProfesorDaoImpl implements IMateriaProfesorDao, Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -21,16 +21,17 @@ public class IncidenciaDaoImpl implements IIncidenciaDao, Serializable{
 	
 	@Transactional
 	@Override
-	public void insert(Incidencia i) {
-		em.persist(i);
+	public void insert(MateriaProfesor m) {
+		em.persist(m);
 	}
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Incidencia> list(){
-		List<Incidencia> lista = new ArrayList<Incidencia>();
-		Query q= em.createQuery("from Incidencia i");
-		lista = (List<Incidencia>)q.getResultList();
+	public List<MateriaProfesor>list(){
+		List<MateriaProfesor>lista = new ArrayList<MateriaProfesor>();
+		Query q = em.createQuery("from MateriaProfesor mp");
+		lista = (List<MateriaProfesor>)q.getResultList();
 		return lista;
 	}
+
 }

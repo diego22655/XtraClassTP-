@@ -44,22 +44,22 @@
 					<div class="form-group table-responsive box-table-class">
 						
 						<p:dataTable id="lstColaborador" var="cob"
-							value="#{ForoController.listaForo}" paginator="true"
+							value="#{foroController.listaForo}" paginator="true"
 							
 							rows="10" styleClass="table table-bordered"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="IdForo" sortBy="#{cob.idAlumno}">
-								<h:outputText value="#{cob.idAlumno}" />
+							<p:column headerText="IdForo" sortBy="#{cob.idForo}">
+								<h:outputText value="#{cob.idForo}" />
 							</p:column>
 
 							<p:column headerText="Asunto">
-								<h:outputText value="#{cob.persona.nombre}"/>
+								<h:outputText value="#{cob.asunto}"/>
 							</p:column>
 							
-							<p:column headerText="Comentario" sortBy="#{cob.nrotarjeta}">
-								<h:outputText value="#{cob.nrotarjeta}" />
+							<p:column headerText="Comentario" sortBy="#{cob.comentario}">
+								<h:outputText value="#{cob.comentario}" />
 							</p:column>
 							
 
