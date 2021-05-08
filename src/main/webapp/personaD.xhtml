@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Docente:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Agregar Docente</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+		
+			<h:outputLabel for="idPersona" value="Id " styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="idPersona"
+				styleClass="form-control" value="#{personaController.persona.idPersona}"
+				required="true" />
+				
+			<h:outputLabel for="nombre" value="Nombre"
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="nombre"
+				styleClass="form-control"
+				value="#{personaController.persona.nombre}" maxlength="20"
+				required="true" />
+
+			<h:outputLabel for="apellido" value="Apellido"
+				styleClass="control-label" />
+				
+			<p:inputText autocomplete="off" id="apellido"
+				styleClass="form-control"
+				value="#{personaController.persona.apellido}" maxlength="20"
+				required="true" />
+
+			<h:outputLabel for="email" value="E-mail"
+				styleClass="control-label" />
+				
+			<p:inputText autocomplete="off" id="email"
+				styleClass="form-control"
+				value="#{personaController.persona.email}" maxlength="50"
+				required="true" />
+				
+			<h:outputLabel for="contraseña" value="Contraseña"
+				styleClass="control-label" />
+				
+			<p:inputText autocomplete="off" id="controseña"
+				styleClass="form-control"
+				value="#{personaController.persona.contraseña}" maxlength="12"
+				required="true" />
+			
+			<h:outputLabel for="nacimiento" value="Nacimiento"
+				styleClass="control-label" />
+				
+			<p:inputText autocomplete="off" id="nacimiento"
+				styleClass="form-control"
+				value="#{personaController.persona.nacimiento}"
+				required="false" />
+
+			<br />
+			
+			<p:commandButton value="Grabar"
+				actionListener="#{personaController.insert()}"
+				styleClass="btn btn-primary " update="@form"
+				action="docente?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listColaborador?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
